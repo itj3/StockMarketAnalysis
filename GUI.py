@@ -5,12 +5,19 @@ from matplotlib.figure import Figure
 from numpy import arange, sin, pi
 from matplotlib.backends.backend_gtkagg import FigureCanvasGTKAgg as FigureCanvas
 
+import matplotlib.pyplot as plt
+from matplotlib.dates import  DateFormatter, WeekdayLocator, HourLocator, \
+	DayLocator, MONDAY
+from matplotlib.finance import quotes_historical_yahoo, candlestick,\
+	plot_day_summary, candlestick2
+
+
 
 
 class GUI:
 	wTree = gtk.Builder()
 
-	def __init__( self ):
+	def __init__(self):
 		#import glade file
 		self.builder = gtk.Builder()
 		self.builder.add_from_file("GUI.glade")
